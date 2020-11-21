@@ -1,0 +1,120 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* root is used to define var with values 
+that can be used in the CSS file */
+:root {
+  --color-fb: #3b5998;
+  --color-insta: #c13584;
+  --color-gitHub: #111111;
+  --color-linkdIn: #3467c2;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d5adc8;
+  background-image: linear-gradient(45deg, #e4d7df 40%, #d37f81 74%);
+}
+
+a {
+  text-decoration: none;
+}
+
+.socialNwBar {
+  display: flex; /* element become display: inline-block */
+}
+
+.socialNwBar a {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  border: 2px solid;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+
+  overflow: hidden;
+}
+
+.socialNwBar a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateY(-110%);
+  -webkit-transform: translateY(-110%);
+  transition: all 0.2s ease;
+  z-index: -1;
+  -moz-transform: translateY(-110%);
+  -ms-transform: translateY(-110%);
+  -o-transform: translateY(-110%);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.socialNwBar a:hover::before {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  opacity: 1;
+}
+
+.socialNwBar a:nth-of-type(1) {
+  border-color: var(--color-linkdIn);
+  color: var(--color-linkdIn);
+}
+.socialNwBar a:nth-of-type(2) {
+  border-color: var(--color-gitHub);
+  color: var(--color-gitHub);
+}
+.socialNwBar a:nth-of-type(3) {
+  border-color: var(--color-insta);
+  color: var(--color-insta);
+}
+.socialNwBar a:nth-of-type(4) {
+  border-color: var(--color-fb);
+  color: var(--color-fb);
+}
+.socialNwBar a:hover i {
+  color: white;
+}
+
+.socialNwBar a:nth-of-type(1):hover::before {
+  background-color: var(--color-linkdIn);
+}
+.socialNwBar a:nth-of-type(2):hover::before {
+  background-color: var(--color-gitHub);
+}
+.socialNwBar a:nth-of-type(3):hover::before {
+  background-color: var(--color-insta);
+}
+.socialNwBar a:nth-of-type(4):hover::before {
+  background-color: var(--color-fb);
+}
